@@ -1,0 +1,11 @@
+{
+    "name": "Cadema.Z1timelinetools.Tests",
+    "references": [
+        "Cadema.Z1timelinetools"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": []
+}

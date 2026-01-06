@@ -1,0 +1,10 @@
+{
+    "name": "Cadema.Z1timelinetools.Editor",
+    "references": [
+      "Cadema.Z1timelinetools"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}
