@@ -1,10 +1,20 @@
 {
     "name": "Cadema.Z1timelinetools.Editor",
+    "rootNamespace": "",
     "references": [
-      "Cadema.Z1timelinetools"
+        "GUID:d7e45018a9105584d9ab240dfa9c2935",
+        "GUID:f06555f75b070af458a003d92f9efb00",
+        "GUID:02f771204943f4a40949438e873e3eff"
     ],
     "includePlatforms": [
         "Editor"
     ],
-    "excludePlatforms": []
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
