@@ -1,0 +1,17 @@
+{
+    "name": "a",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d7e45018a9105584d9ab240dfa9c2935",
+        "GUID:39eff4ad41b671241a446e37f2e8a004"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
