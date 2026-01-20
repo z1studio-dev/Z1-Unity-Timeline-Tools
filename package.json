@@ -1,7 +1,7 @@
 {
   "name": "com.cadema.z1timelinetools",
   "displayName": "Z1 Timeline Tools",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "unity": "6000.3",
   "unityRelease": "2f1",
   "description": "Some timeline tools:\n- Signal emitter with custom type\n- Skybox blending\n- Fog blending\n- Timeline Manager \n- Marqueur Pause/Play\n- Mesh enabler",
@@ -12,5 +12,12 @@
   },
   "dependencies": {
     "com.unity.timeline": "1.8.9"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Signals",
+      "description": "Contains a premade listes of signals emitters",
+      "path": "Samples/Signals"
+    }
+  ]
 }
