@@ -17,9 +17,12 @@ public class SkyboxMixerBehaviour : PlayableBehaviour
     
     static readonly string kShaderName = "Skybox/Blended Cubemap";
 
+    private bool hasClip = false;
 
     public override void ProcessFrame(Playable playable, FrameData info, object playerData)
     {
+
+
         if (_blendMat == null)
         {
             Material current = RenderSettings.skybox;
@@ -41,21 +44,34 @@ public class SkyboxMixerBehaviour : PlayableBehaviour
 
         if (_blendMat == null) return;
 
+
         Cubemap cubeA = null, cubeB = null;
         float rotA = 0f, rotB = 0f;
-        Color tint = Color.black;
+        Color tint = Color.clear;
         float exposure = 0f;
         float blendWeightB = 0f;
         bool updateEnvLight = true;
         
         int inputCount = playable.GetInputCount();
+        bool anyActive = false;
+
         for (int i = 0; i < inputCount; ++i)
         {
+            if (playable.GetInputWeight(i) > 0f) { 
+                anyActive = true; 
+                //break; 
+            }
+
+
             float w = playable.GetInputWeight(i);
-            if (w <= 0f) continue;
+            if (w <= 0f) 
+            { 
+                continue; 
+            };
 
             var behaviour = ((ScriptPlayable<SkyboxBehaviour>)playable.GetInput(i)).GetBehaviour();
             var mat = behaviour.skyboxMaterial;
+
             updateEnvLight = behaviour.updateEnvLight;
             if (mat == null) continue;
 
@@ -76,7 +92,13 @@ public class SkyboxMixerBehaviour : PlayableBehaviour
 
             tint += mat.GetColor("_Tint") * w;
             exposure += mat.GetFloat("_Exposure") * w;
+
         }
+        if (!anyActive)
+        {
+            return;
+        }// <-- nothing writes, last skybox state is preserved
+
 
         // Fallbacks so A/B always both valid -----------------------------------
         if (cubeA == null && cubeB != null)

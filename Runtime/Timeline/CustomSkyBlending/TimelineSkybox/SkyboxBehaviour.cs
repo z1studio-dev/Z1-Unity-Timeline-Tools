@@ -9,4 +9,5 @@ public class SkyboxBehaviour : PlayableBehaviour
     public Material skyboxMaterial;
 
     public bool updateEnvLight;
+
 }
