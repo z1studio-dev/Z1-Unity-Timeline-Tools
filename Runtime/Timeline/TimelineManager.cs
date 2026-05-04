@@ -9,7 +9,10 @@ using UnityEngine.Assertions;
 public class TimelineManager : MonoBehaviour
 {
     [SerializeField] PlayableDirector _timeline;
-    
+
+    private PlayableDirector _nextTimeline;
+
+
     private static TimelineManager instance;
     public static TimelineManager Instance => instance;
     public bool autoStart = true;
@@ -67,5 +70,15 @@ public class TimelineManager : MonoBehaviour
     {
         TimelineAsset timelineAsset = _timeline.playableAsset as TimelineAsset;
         return frame / timelineAsset.editorSettings.frameRate;
+    }
+
+    public void SetNextPlayableDirector(PlayableDirector timeline)
+    {
+        _nextTimeline = timeline;
+    }
+
+    public void PlayNextTimeline()
+    {
+        _nextTimeline.Play();
     }
 }
